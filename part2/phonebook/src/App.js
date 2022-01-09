@@ -47,15 +47,21 @@ const App = () => {
                         notifyOfSuccess(`${oldPerson.name} updated`)
                     })
                     .catch(error => {
-                        notifyOfError(`${oldPerson.name} has already been removed from the server`)
+                        console.log(error.response.data)
+                        const msg = error.response.data.error || `${oldPerson.name} has already been removed from the server`
+                        notifyOfError(msg)
                     })
             }
         } else {
             personService.create({name: newName, number: newNumber})
                 .then(created => {
                     setPersons(persons.concat(created))
+                    notifyOfSuccess(`New person - ${newName} created`)
                 })
-            notifyOfSuccess(`New person - ${newName} created`)
+                .catch(error => {
+                    console.log(error.response.data.error)
+                    notifyOfError(error.response.data.error)
+                })
         }
         setNewName('')
         setNewNumber('')
