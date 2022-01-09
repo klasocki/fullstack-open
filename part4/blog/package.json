@@ -1,0 +1,37 @@
+{
+  "name": "fullstack-blog",
+  "version": "1.0.0",
+  "description": "https://arcane-crag-29680.herokuapp.com - heroku link",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint .",
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klasocki/fullstack-open.git"
+  },
+  "author": "klasocki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klasocki/fullstack-open/issues"
+  },
+  "homepage": "https://github.com/klasocki/fullstack-part3#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
