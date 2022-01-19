@@ -20,14 +20,14 @@ const Blog = ({blog, like, onDelete}) => {
 
     if (!visible) {
         return (
-            <div style={blogStyle}>
+            <div className="short-blog" style={blogStyle}>
                 {blog.title} | {blog.author}
                 <button onClick={toggleVisibility}>Show more</button>
             </div>
         )
     } else {
         return (
-            <div style={blogStyle}>
+            <div className="long-blog" style={blogStyle}>
                 <p>{blog.title} <button onClick={toggleVisibility}>Hide</button></p>
                 <p>{blog.url}</p>
                 <p>Likes: {blog.likes} <button onClick={likeHandler}>Like</button></p>
